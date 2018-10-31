@@ -72,7 +72,7 @@ export default {
         },
         {
           id: 7,
-          name: 'Funko Bianca',
+          name: 'Funko Moana',
           src: require('../assets/7.png')
         }
       ]

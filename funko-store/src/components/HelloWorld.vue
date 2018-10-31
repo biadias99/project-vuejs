@@ -19,13 +19,13 @@
               height="160px"
             ></v-img>
             <v-card-text primary-title>
-              <router-link class="name text-xs-center" :to="{ name: 'product', params: { id: product.id, name: product.name }}">
+              <span class="name text-xs-center">
                 {{ product.name }}
-              </router-link>
+              </span>
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn flat color="#e84393" :to="{ name: 'product', params: { id: product.id, name: product.name }}">Comprar</v-btn>
+              <v-btn flat color="#e84393">Comprar</v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>

@@ -12,7 +12,7 @@
           v-for="product in products" 
           :key="product.id"
         >
-          <v-card height="280px">
+          <v-card height="300px">
             <v-img
               :src="product.src"
               aspect-ratio="2.75"
@@ -25,7 +25,12 @@
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn flat color="#e84393">Comprar</v-btn>
+              <v-card-text v-if="product.qtde === 0">
+                <p>
+                  SEM ESTOQUE!
+                </p>
+              </v-card-text>
+              <v-btn v-else flat color="#e84393">Comprar</v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>
@@ -43,37 +48,44 @@ export default {
         {
           id: 1,
           name: 'Funko Flash',
-          src: require('../assets/1.png')
+          src: require('../assets/1.png'),
+          qtde: 2,
         },
         {
           id: 2,
           name: 'Funko Roadhog',
-          src: require('../assets/2.png')
+          src: require('../assets/2.png'),
+          qtde: 3,
         },
         {
           id: 3,
           name: 'Funko Mulher Maravilha',
-          src: require('../assets/3.png')
+          src: require('../assets/3.png'),
+          qtde: 4,
         },
         {
           id: 4,
           name: 'Funko Batman',
-          src: require('../assets/4.png')
+          src: require('../assets/4.png'),
+          qtde: 5,
         },
         {
           id: 5,
           name: 'Funko Thanos',
-          src: require('../assets/5.png')
+          src: require('../assets/5.png'),
+          qtde: 6,
         },
         {
           id: 6,
           name: 'Funko Florzinha',
-          src: require('../assets/6.png')
+          src: require('../assets/6.png'),
+          qtde: 0,
         },
         {
           id: 7,
           name: 'Funko Moana',
-          src: require('../assets/7.png')
+          src: require('../assets/7.png'),
+          qtde: 0,
         }
       ]
     }
@@ -83,14 +95,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.name:link {
-  text-decoration: none;
-  color: #343434;
-}
-.name:visited {
-  text-decoration: none;
-  color: #343434;
-}
 .name {
   font-weight: 600;
   font-size: 17px;

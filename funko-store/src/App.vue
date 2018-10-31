@@ -23,6 +23,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* aqui tinha um margin-top, tira também*/
   text-align: center;
   color: #2c3e50;
 }
